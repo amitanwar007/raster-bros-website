@@ -64,4 +64,22 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  /* Mobile Optimizations */
+  @media (max-width: 768px) {
+    body {
+      -webkit-font-smoothing: antialiased;
+      -webkit-tap-highlight-color: transparent;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+    
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input, textarea, select {
+      font-size: 16px; /* Prevents zoom on iOS */
+    }
+  }
 }
