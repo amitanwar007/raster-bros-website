@@ -1,8 +1,34 @@
-import type { InsertProject } from "./schema";
+import type { InsertProject } from "../src/lib/schema";
 
 // Raster Bros Projects Data
 // Easy to update - just add new objects to this array
 export const rasterBrosProjects: Omit<InsertProject, "id">[] = [
+  // {
+  //   title: "Digital Alchemy",
+  //   category: "Digital Art",
+  //   description: "A groundbreaking digital art project blending visual effects and creative storytelling.",
+  //   detailedDescription: "Digital Alchemy represents the pinnacle of creative digital production. We combined cutting-edge visual effects, animation, and cinematography to create a mesmerizing experience. This project showcases our ability to push the boundaries of what's possible in digital media, creating immersive content that captivates and inspires audiences.",
+  //   imageUrl: "https://images.unsplash.com/photo-1519315901367-f8460dd60519?w=1600&h=1200&fit=crop",
+  //   year: "2024",
+  //   slug: "digital-alchemy",
+  //   isFeatured: true,
+  //   workType: "movie",
+  //   bannerVideo: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  //   carouselImages: [
+  //     "https://images.unsplash.com/photo-1519315901367-f8460dd60519?w=1600&h=900&fit=crop",
+  //     "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1600&h=900&fit=crop",
+  //     "https://images.unsplash.com/photo-1501948993852-d20d0db59d01?w=1600&h=900&fit=crop",
+  //   ],
+  //   galleryImages: [
+  //     "https://images.unsplash.com/photo-1519315901367-f8460dd60519?w=1200&h=800&fit=crop",
+  //     "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=1200&h=800&fit=crop",
+  //     "https://images.unsplash.com/photo-1501948993852-d20d0db59d01?w=1200&h=800&fit=crop",
+  //     "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop",
+  //     "https://images.unsplash.com/photo-1518611505868-48510604a239?w=1200&h=800&fit=crop",
+  //     "https://images.unsplash.com/photo-1519052537078-e6302a4968d4?w=1200&h=800&fit=crop",
+  //   ],
+  //   embeddedVideo: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+  // },
   {
     title: "Midnight Shadows",
     category: "Feature Film",

@@ -1,50 +1,40 @@
-import { z } from 'zod';
-import { insertProjectSchema, projects } from './schema';
+import { z } from "zod";
 
-export const errorSchemas = {
-  validation: z.object({
-    message: z.string(),
-    field: z.string().optional(),
-  }),
-  notFound: z.object({
-    message: z.string(),
-  }),
-  internal: z.object({
-    message: z.string(),
-  }),
-};
+// Schema definitions
+const ProjectSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string(),
+  slug: z.string(),
+  image: z.string().optional(),
+  link: z.string().optional(),
+});
 
+type Project = z.infer<typeof ProjectSchema>;
+
+// API routes configuration
 export const api = {
   projects: {
     list: {
-      method: 'GET' as const,
-      path: '/api/projects',
+      path: "/api/projects",
       responses: {
-        200: z.array(z.custom<typeof projects.$inferSelect>()),
+        200: z.array(ProjectSchema),
       },
     },
     get: {
-      method: 'GET' as const,
-      path: '/api/projects/:slug',
+      path: "/api/projects/:slug",
       responses: {
-        200: z.custom<typeof projects.$inferSelect>(),
-        404: errorSchemas.notFound,
+        200: ProjectSchema,
       },
     },
   },
 };
 
-export function buildUrl(path: string, params?: Record<string, string | number>): string {
+// Helper function to build URLs with parameters
+export function buildUrl(path: string, params: Record<string, string>): string {
   let url = path;
-  if (params) {
-    Object.entries(params).forEach(([key, value]) => {
-      if (url.includes(`:${key}`)) {
-        url = url.replace(`:${key}`, String(value));
-      }
-    });
+  for (const [key, value] of Object.entries(params)) {
+    url = url.replace(`:${key}`, value);
   }
   return url;
 }
-
-export type ProjectResponse = z.infer<typeof api.projects.get.responses[200]>;
-export type ProjectsListResponse = z.infer<typeof api.projects.list.responses[200]>;
