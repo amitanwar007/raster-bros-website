@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { rasterBrosProjects } from "../../shared/projects-data";
-import { ProjectSchema } from "../../src/lib/schema";
+import { rasterBrosProjects } from "../../../shared/projects-data";
+import { ProjectSchema } from "../../../src/lib/schema";
+
 
 export default function handler(
   req: NextApiRequest,

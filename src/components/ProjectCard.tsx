@@ -22,10 +22,11 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           <img
             src={project.imageUrl}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-700 ease-[0.16,1,0.3,1] group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 ease-studio
+                         group-hover:scale-105"
           />
         </div>
-        
+
         <div className="flex justify-between items-start border-t border-white/10 pt-4">
           <div>
             <h3 className="text-2xl font-display font-medium mb-1 group-hover:text-white/70 transition-colors">

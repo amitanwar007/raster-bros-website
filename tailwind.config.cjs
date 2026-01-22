@@ -13,6 +13,9 @@ module.exports = {
         md: ".375rem", // 6px
         sm: ".1875rem", // 3px
       },
+      transitionTimingFunction: {
+        studio: "cubic-bezier(0.16, 1, 0.3, 1)",
+      },
       colors: {
         background: "hsl(var(--background) / <alpha-value>)",
         foreground: "hsl(var(--foreground) / <alpha-value>)",
@@ -55,11 +58,11 @@ module.exports = {
         },
         ring: "hsl(var(--ring) / <alpha-value>)",
         chart: {
-          "1": "hsl(var(--chart-1) / <alpha-value>)",
-          "2": "hsl(var(--chart-2) / <alpha-value>)",
-          "3": "hsl(var(--chart-3) / <alpha-value>)",
-          "4": "hsl(var(--chart-4) / <alpha-value>)",
-          "5": "hsl(var(--chart-5) / <alpha-value>)",
+          1: "hsl(var(--chart-1) / <alpha-value>)",
+          2: "hsl(var(--chart-2) / <alpha-value>)",
+          3: "hsl(var(--chart-3) / <alpha-value>)",
+          4: "hsl(var(--chart-4) / <alpha-value>)",
+          5: "hsl(var(--chart-5) / <alpha-value>)",
         },
         sidebar: {
           ring: "hsl(var(--sidebar-ring) / <alpha-value>)",
@@ -105,5 +108,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
